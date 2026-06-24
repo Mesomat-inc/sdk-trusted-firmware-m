@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include "target_cfg.h"
-#include "region_defs.h"
-#include "tfm_plat_defs.h"
-#include "tfm_peripherals_config.h"
-#include "tfm_plat_provisioning.h"
-#include "utilities.h"
 #include "region.h"
+#include "region_defs.h"
+#include "target_cfg.h"
+#include "tfm_peripherals_config.h"
+#include "tfm_plat_defs.h"
+#include "tfm_plat_provisioning.h"
 #include "tfm_utils.h"
+#include "utilities.h"
 #include <nrfx.h>
 
 #if TFM_PERIPHERAL_DCNF_SECURE
@@ -664,5 +664,11 @@ struct platform_data_t tfm_peripheral_gpiote20 = {
 struct platform_data_t tfm_peripheral_gpiote30 = {
     NRF_GPIOTE30_S_BASE,
     NRF_GPIOTE30_S_BASE + (sizeof(NRF_GPIOTE_Type) - 1),
+};
+#endif
+#if TFM_PERIPHERAL_CLOCK_CALIB_SECURE
+struct platform_data_t tfm_peripheral_clock_calib = {
+    0x50120800UL,
+    0x501208FFUL,
 };
 #endif

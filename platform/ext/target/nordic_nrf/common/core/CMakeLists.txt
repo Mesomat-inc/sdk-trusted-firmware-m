@@ -297,6 +297,12 @@ if(BL2)
     endif()
 endif()
 
+if(TFM_PERIPHERAL_CLOCK_CALIB_SECURE)
+    target_compile_definitions(platform_s
+        PUBLIC
+            TFM_PERIPHERAL_CLOCK_CALIB_SECURE=1
+    )
+endif()
 if(NRF_APPROTECT)
     target_compile_definitions(tfm_spm
     PRIVATE

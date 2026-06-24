@@ -56,6 +56,7 @@ extern struct platform_data_t tfm_peripheral_gpiote30;
 extern struct platform_data_t tfm_peripheral_pwm20;
 extern struct platform_data_t tfm_peripheral_pwm21;
 extern struct platform_data_t tfm_peripheral_pwm22;
+extern struct platform_data_t tfm_peripheral_clock_calib;
 
 #define TFM_PERIPHERAL_TIMER00 (&tfm_peripheral_timer00)
 #define TFM_PERIPHERAL_TIMER10 (&tfm_peripheral_timer10)
@@ -77,6 +78,7 @@ extern struct platform_data_t tfm_peripheral_pwm22;
 #define TFM_PERIPHERAL_PWM20 (&tfm_peripheral_pwm20)
 #define TFM_PERIPHERAL_PWM21 (&tfm_peripheral_pwm21)
 #define TFM_PERIPHERAL_PWM22 (&tfm_peripheral_pwm22)
+#define TFM_PERIPHERAL_CLOCK_CALIB (&tfm_peripheral_clock_calib)
 
 /*
  * Quantized default IRQ priority, the value is:
@@ -90,11 +92,11 @@ extern struct platform_data_t tfm_peripheral_uarte21;
 extern struct platform_data_t tfm_peripheral_uarte22;
 extern struct platform_data_t tfm_peripheral_uarte30;
 
-#define TFM_PERIPHERAL_UARTE00       (&tfm_peripheral_uarte00)
-#define TFM_PERIPHERAL_UARTE20       (&tfm_peripheral_uarte20)
-#define TFM_PERIPHERAL_UARTE21       (&tfm_peripheral_uarte21)
-#define TFM_PERIPHERAL_UARTE22       (&tfm_peripheral_uarte22)
-#define TFM_PERIPHERAL_UARTE30       (&tfm_peripheral_uarte30)
+#define TFM_PERIPHERAL_UARTE00 (&tfm_peripheral_uarte00)
+#define TFM_PERIPHERAL_UARTE20 (&tfm_peripheral_uarte20)
+#define TFM_PERIPHERAL_UARTE21 (&tfm_peripheral_uarte21)
+#define TFM_PERIPHERAL_UARTE22 (&tfm_peripheral_uarte22)
+#define TFM_PERIPHERAL_UARTE30 (&tfm_peripheral_uarte30)
 
 /*
  * Map TFM_PERIPHERAL_STD_UART to the UART instance that is actually configured
@@ -105,15 +107,15 @@ extern struct platform_data_t tfm_peripheral_uarte30;
  * common/core/CMakeLists.txt, so the value is always visible here.
  */
 #if NRF_SECURE_UART_INSTANCE == 00
-#define TFM_PERIPHERAL_STD_UART     TFM_PERIPHERAL_UARTE00
+#define TFM_PERIPHERAL_STD_UART TFM_PERIPHERAL_UARTE00
 #elif NRF_SECURE_UART_INSTANCE == 20
-#define TFM_PERIPHERAL_STD_UART     TFM_PERIPHERAL_UARTE20
+#define TFM_PERIPHERAL_STD_UART TFM_PERIPHERAL_UARTE20
 #elif NRF_SECURE_UART_INSTANCE == 21
-#define TFM_PERIPHERAL_STD_UART     TFM_PERIPHERAL_UARTE21
+#define TFM_PERIPHERAL_STD_UART TFM_PERIPHERAL_UARTE21
 #elif NRF_SECURE_UART_INSTANCE == 22
-#define TFM_PERIPHERAL_STD_UART     TFM_PERIPHERAL_UARTE22
+#define TFM_PERIPHERAL_STD_UART TFM_PERIPHERAL_UARTE22
 #else
-#define TFM_PERIPHERAL_STD_UART     TFM_PERIPHERAL_UARTE30
+#define TFM_PERIPHERAL_STD_UART TFM_PERIPHERAL_UARTE30
 #endif
 
 #ifdef PSA_API_TEST_IPC
